@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Us</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="contact.css">
+</head>
+<body>
+    <header>
+		<a href="#home" class="logo"><i class="fa fa-untensils"></i>QuickFood</a>
+		<input type="checkbox" id="slidebarM">
+<label for="slidebarM" class="slidebar">
+	<div class="spinner top"></div>
+	<div class="spinner middle"></div>
+	<div class="spinner bottom"></div> 
+</label>
+		<nav class="navbar">
+			
+			<a href="index.html" >Home</a>
+			<a href="menu.html">Menu</a>
+			<a href="about.html">About</a>
+			<a href="contact.html"  class="active">Contact Us</a>
+			<a href="clickme.html">Click Me</a>
+		</nav>
+    </header>
+  <div class="container">
+    <div class="content">
+      
+      </div>
+      <div class="right-side">
+        <div class="topic-text">Buy Now</div><br><br><br>
+        <p>Thank You for ordering from you. Hope you like our Food.</p><br><br><br><br>
+      <form onsubmit="return sendEmail(); reset(); return false;">
+        <div class="input-box">
+          <input type="text" id="name" required placeholder="Enter your Full name" >
+        </div>
+        <div class="input-box">
+          <input type="phone" id="phone"  required placeholder="Enter your Phone Number" >
+        </div>
+        <div class="input-box">
+          <input type="text" name="email" id="email"  required placeholder="Enter your Address" >
+        </div>
+        <div class="input-box">
+          <textarea id="add" required placeholder="feedback" row="3" coloum="20" ></textarea>
+        </div>
+        <div class="input-box message-box">
+          
+        </div>
+        <div class="button">
+         <a href="buyform.html"> <input type="button" value="Buy Now"  ></a>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="button">
+          <a href="index.html"><input type="button" value="Home Page" ></a>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+  <!-- <div class="copy-right">
+		@ COPYRIGHT 2023 FAMOUS ICECREAM (Gang of wasympur)
+	</div> -->
+</body>
+</html>
+<script src="https://smtpjs.com/v3/smtp.js">
+  function sendEmail()
+  {
+    Email.send(
+      {
+      Host : "smtp.gmail.com",
+      Username : "121akhilkumar2116@sjcem.edu.in",
+      Password : "Akhil@@2003",
+      To : '121akhilkumar2116@sjcem.edu.in',
+      From : document.getElementById('email').value,
+      Subject : "New Contact form Enquiry",
+      Body : "Name: " + document.getElementById('name').value
+              + "<br> Email: " + document.getElementById('email').value
+              + "<br> Phone Number: " + document.getElementById('phone').value
+              + "<br> Message: " + document.getElementById('add').value
+    }).then(
+              message => alert("Food Will be Delivered in 30 minutes.")
+           );
+}
+</script>
